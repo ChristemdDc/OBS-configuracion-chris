@@ -1,0 +1,1353 @@
+{
+    "name": "Twitch_Chris",
+    "current_scene": "1 - Empezando",
+    "current_program_scene": "1 - Empezando",
+    "scene_order": [
+        {
+            "name": "1 - Empezando"
+        },
+        {
+            "name": "2 - Juego"
+        },
+        {
+            "name": "3 - Pantalla / Charla"
+        },
+        {
+            "name": "4 - Pausa"
+        },
+        {
+            "name": "5 - Final"
+        }
+    ],
+    "sources": [
+        {
+            "name": "Microfono",
+            "id": "wasapi_input_capture",
+            "versioned_id": "wasapi_input_capture",
+            "settings": {
+                "device_id": "default"
+            },
+            "mixers": 3,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [
+                {
+                    "name": "1 Supresion de ruido",
+                    "id": "noise_suppress_filter",
+                    "versioned_id": "noise_suppress_filter_v2",
+                    "settings": {
+                        "method": "rnnoise"
+                    },
+                    "enabled": true,
+                    "mixers": 0,
+                    "volume": 1.0,
+                    "muted": false,
+                    "flags": 0,
+                    "sync": 0,
+                    "balance": 0.5,
+                    "hotkeys": {},
+                    "monitoring_type": 0
+                },
+                {
+                    "name": "2 Puerta de ruido",
+                    "id": "noise_gate_filter",
+                    "versioned_id": "noise_gate_filter",
+                    "settings": {
+                        "open_threshold": -26.0,
+                        "close_threshold": -32.0,
+                        "attack_time": 25,
+                        "hold_time": 200,
+                        "release_time": 150
+                    },
+                    "enabled": true,
+                    "mixers": 0,
+                    "volume": 1.0,
+                    "muted": false,
+                    "flags": 0,
+                    "sync": 0,
+                    "balance": 0.5,
+                    "hotkeys": {},
+                    "monitoring_type": 0
+                },
+                {
+                    "name": "3 Compresor",
+                    "id": "compressor_filter",
+                    "versioned_id": "compressor_filter",
+                    "settings": {
+                        "ratio": 4.0,
+                        "threshold": -18.0,
+                        "attack_time": 6,
+                        "release_time": 60,
+                        "output_gain": 0.0
+                    },
+                    "enabled": true,
+                    "mixers": 0,
+                    "volume": 1.0,
+                    "muted": false,
+                    "flags": 0,
+                    "sync": 0,
+                    "balance": 0.5,
+                    "hotkeys": {},
+                    "monitoring_type": 0
+                },
+                {
+                    "name": "4 Limitador",
+                    "id": "limiter_filter",
+                    "versioned_id": "limiter_filter",
+                    "settings": {
+                        "threshold": -6.0,
+                        "release_time": 60
+                    },
+                    "enabled": true,
+                    "mixers": 0,
+                    "volume": 1.0,
+                    "muted": false,
+                    "flags": 0,
+                    "sync": 0,
+                    "balance": 0.5,
+                    "hotkeys": {},
+                    "monitoring_type": 0
+                }
+            ],
+            "hotkeys": {}
+        },
+        {
+            "name": "Musica (solo directo)",
+            "id": "wasapi_process_output_capture",
+            "versioned_id": "wasapi_process_output_capture",
+            "settings": {
+                "window": "Spotify:Chrome_WidgetWin_1:Spotify.exe",
+                "priority": 2
+            },
+            "mixers": 1,
+            "volume": 0.1259,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Audio Discord",
+            "id": "wasapi_process_output_capture",
+            "versioned_id": "wasapi_process_output_capture",
+            "settings": {
+                "window": "Discord:Chrome_WidgetWin_1:Discord.exe",
+                "priority": 2
+            },
+            "mixers": 3,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Captura de juego",
+            "id": "game_capture",
+            "versioned_id": "game_capture",
+            "settings": {
+                "capture_mode": "any_fullscreen",
+                "capture_audio": true,
+                "capture_cursor": true,
+                "allow_transparency": false
+            },
+            "mixers": 3,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Captura de pantalla",
+            "id": "monitor_capture",
+            "versioned_id": "monitor_capture",
+            "settings": {
+                "monitor": 0,
+                "capture_cursor": true
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Camara",
+            "id": "dshow_input",
+            "versioned_id": "dshow_input",
+            "settings": {
+                "res_type": 0,
+                "active": true
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Alertas",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "url": "",
+                "width": 1920,
+                "height": 1080,
+                "fps": 30,
+                "reroute_audio": true,
+                "shutdown": false,
+                "restart_when_active": false
+            },
+            "mixers": 3,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Chat",
+            "id": "browser_source",
+            "versioned_id": "browser_source",
+            "settings": {
+                "url": "",
+                "width": 420,
+                "height": 700,
+                "fps": 30,
+                "shutdown": true
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Fondo",
+            "id": "color_source",
+            "versioned_id": "color_source_v3",
+            "settings": {
+                "color": 4280163856,
+                "width": 1920,
+                "height": 1080
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Texto Empezando",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "EMPEZAMOS EN BREVE",
+                "font": {
+                    "face": "Arial",
+                    "style": "Bold",
+                    "size": 110,
+                    "flags": 1
+                },
+                "color": 4294967295,
+                "outline": true,
+                "outline_size": 6,
+                "outline_color": 4278190080,
+                "align": "center",
+                "valign": "center"
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Texto Pausa",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "VUELVO ENSEGUIDA",
+                "font": {
+                    "face": "Arial",
+                    "style": "Bold",
+                    "size": 110,
+                    "flags": 1
+                },
+                "color": 4294967295,
+                "outline": true,
+                "outline_size": 6,
+                "outline_color": 4278190080,
+                "align": "center",
+                "valign": "center"
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "Texto Final",
+            "id": "text_gdiplus",
+            "versioned_id": "text_gdiplus_v3",
+            "settings": {
+                "text": "GRACIAS POR VER\nNOS VEMOS EN EL PROXIMO DIRECTO",
+                "font": {
+                    "face": "Arial",
+                    "style": "Bold",
+                    "size": 80,
+                    "flags": 1
+                },
+                "color": 4294967295,
+                "outline": true,
+                "outline_size": 6,
+                "outline_color": 4278190080,
+                "align": "center",
+                "valign": "center"
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "[Comun] Alertas",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 1,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "1 - Empezando",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 4,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Fondo",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    },
+                    {
+                        "name": "Texto Empezando",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 460.0,
+                            "y": 470.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 2
+                    },
+                    {
+                        "name": "Musica (solo directo)",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 3
+                    },
+                    {
+                        "name": "[Comun] Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 4
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "2 - Juego",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 6,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Captura de juego",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 1920.0,
+                            "y": 1080.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    },
+                    {
+                        "name": "Camara",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 1440.0,
+                            "y": 790.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 460.0,
+                            "y": 270.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 2
+                    },
+                    {
+                        "name": "Microfono",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 3
+                    },
+                    {
+                        "name": "Audio Discord",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 4
+                    },
+                    {
+                        "name": "Musica (solo directo)",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 5
+                    },
+                    {
+                        "name": "[Comun] Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 6
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "3 - Pantalla / Charla",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 8,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Fondo",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    },
+                    {
+                        "name": "Captura de pantalla",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 40.0,
+                            "y": 40.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 1400.0,
+                            "y": 788.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 2
+                    },
+                    {
+                        "name": "Camara",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 1460.0,
+                            "y": 40.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 420.0,
+                            "y": 236.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 3
+                    },
+                    {
+                        "name": "Chat",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 1460.0,
+                            "y": 300.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 2,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 420.0,
+                            "y": 740.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 4
+                    },
+                    {
+                        "name": "Microfono",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 5
+                    },
+                    {
+                        "name": "Audio Discord",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 6
+                    },
+                    {
+                        "name": "Musica (solo directo)",
+                        "visible": false,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 7
+                    },
+                    {
+                        "name": "[Comun] Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 8
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "4 - Pausa",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 4,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Fondo",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    },
+                    {
+                        "name": "Texto Pausa",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 520.0,
+                            "y": 470.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 2
+                    },
+                    {
+                        "name": "Musica (solo directo)",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 3
+                    },
+                    {
+                        "name": "[Comun] Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 4
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        },
+        {
+            "name": "5 - Final",
+            "id": "scene",
+            "versioned_id": "scene",
+            "settings": {
+                "id_counter": 4,
+                "custom_size": false,
+                "items": [
+                    {
+                        "name": "Fondo",
+                        "visible": true,
+                        "locked": true,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 1
+                    },
+                    {
+                        "name": "Texto Final",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 260.0,
+                            "y": 440.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 2
+                    },
+                    {
+                        "name": "Musica (solo directo)",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 3
+                    },
+                    {
+                        "name": "[Comun] Alertas",
+                        "visible": true,
+                        "locked": false,
+                        "rot": 0.0,
+                        "pos": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "scale": {
+                            "x": 1.0,
+                            "y": 1.0
+                        },
+                        "align": 5,
+                        "bounds_type": 0,
+                        "bounds_align": 0,
+                        "bounds": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "crop_left": 0,
+                        "crop_top": 0,
+                        "crop_right": 0,
+                        "crop_bottom": 0,
+                        "scale_filter": "disable",
+                        "blend_method": "default",
+                        "blend_type": "normal",
+                        "group_item_backup": false,
+                        "id": 4
+                    }
+                ]
+            },
+            "mixers": 0,
+            "volume": 1.0,
+            "balance": 0.5,
+            "muted": false,
+            "enabled": true,
+            "flags": 0,
+            "sync": 0,
+            "monitoring_type": 0,
+            "push-to-mute": false,
+            "push-to-talk": false,
+            "filters": [],
+            "hotkeys": {}
+        }
+    ],
+    "groups": [],
+    "quick_transitions": [],
+    "transitions": [],
+    "current_transition": "Fade",
+    "transition_duration": 300,
+    "preview_locked": false,
+    "scaling_enabled": false,
+    "modules": {}
+}
